@@ -17,6 +17,7 @@ Ensure you have `Node.js` and `npm` installed. You can download them from [nodej
 ### Installation
 
 1. Clone the repository:
+
    ```bash
    git clone git@github.com:nitronaj/ts-boilerplate.git
    cd ts-boilerplate
@@ -30,13 +31,14 @@ Ensure you have `Node.js` and `npm` installed. You can download them from [nodej
 ### Project Structure
 
 - **`src/`**: Source files for your project.
-- **`tests/` or `src/**.test.ts`**: Test files for your project.
+- **`tests/` or `src/**/\*.test.ts`**: Test files for your project.
 - **`tsconfig.json`**: TypeScript configuration file.
 - **`jest.config.js`**: Jest configuration file.
 
 ### Running the Project
 
 You can run TypeScript files using `ts-node`:
+
 ```bash
 npx ts-node src/index.ts
 ```
@@ -44,15 +46,16 @@ npx ts-node src/index.ts
 ### Running Tests
 
 To run tests, use:
+
 ```bash
 npm test
 npm test:watch
+npm test -- --testPathPattern==<folder-name> #Jest tests only in a specific folder
 ```
 
 ### Test-Driven Development (TDD) Approach
 
 <img src="https://symflower.com/en/company/blog/2023/how-to-get-started-with-tdd/images/get-started-with-tdd-blogpost-02.png" alt="TDD Cycle Diagram" width="500px" height="500px">
-
 
 This project follows a Test-Driven Development (TDD) approach. TDD is a software development process where you write tests before writing the actual code. This approach follows a cycle of:
 
@@ -60,8 +63,8 @@ This project follows a Test-Driven Development (TDD) approach. TDD is a software
 2. **Green**: Write the minimal code necessary to pass the test.
 3. **Refactor**: Refactor the code while ensuring all tests still pass.
 
-
 #### TDD Cycle
+
 1. Write a Test: Write a test that covers a specific piece of functionality.
 2. Run the Test and See it Fail: Run the test and see it fail, as the code to implement the functionality does not exist yet.
 3. Write the Code: Write the minimal amount of code required to pass the test.
@@ -81,36 +84,36 @@ Here is an example of how you might write a test and then implement the code usi
 1. **Write a Test**
 
    Create a new test file `src/example.test.ts`:
-   ```typescript
-   import { add } from './example';
 
-   test('adds 1 + 2 to equal 3', () => {
-       expect(add(1, 2)).toBe(3);
+   ```typescript
+   import { add } from "./example";
+
+   test("adds 1 + 2 to equal 3", () => {
+     expect(add(1, 2)).toBe(3);
    });
    ```
 
    ```typescript
+   import { add } from "../src/calculator";
 
-   import { add } from '../src/calculator';
+   describe("add", () => {
+     it("should add two numbers", () => {
+       expect(add(2, 3)).toBe(5);
+     });
 
-	describe('add', () => {
-		it('should add two numbers', () => {
-			expect(add(2, 3)).toBe(5);
-		});
-
-		it('should handle negative numbers', () => {
-			expect(add(-1, 4)).toBe(3);
-		});
-	});
-	```
-
+     it("should handle negative numbers", () => {
+       expect(add(-1, 4)).toBe(3);
+     });
+   });
+   ```
 
 2. **Implement the Function**
 
    Create or modify `src/example.ts`:
+
    ```typescript
    export function add(a: number, b: number): number {
-       return a + b;
+     return a + b;
    }
    ```
 
@@ -133,4 +136,3 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## Contact
 
 For questions or support, reach out to [your-email@example.com](mailto:your-email@example.com).
-
