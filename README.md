@@ -50,7 +50,7 @@ To run tests, use:
 ```bash
 npm test
 npm test:watch
-npm test -- --testPathPattern==<folder-name> #Jest tests only in a specific folder
+npm test -- --testPathPattern=<folder-name> #Jest tests only in a specific folder
 ```
 
 ### Test-Driven Development (TDD) Approach
