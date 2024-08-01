@@ -18,7 +18,7 @@ Ensure you have `Node.js` and `npm` installed. You can download them from [nodej
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/ts-boilerplate.git
+   git clone git@github.com:nitronaj/ts-boilerplate.git
    cd ts-boilerplate
    ```
 
