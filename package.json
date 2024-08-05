@@ -1,5 +1,5 @@
 {
-  "name": "hello",
+  "name": "ts-boilerplate",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "jest",
     "test:watch": "jest --watchAll"
   },
-  "author": "",
+  "author": "Charlie Nader",
   "license": "ISC",
   "devDependencies": {
     "@types/jest": "^29.5.12",
